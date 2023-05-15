@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nhan chia</title>
+</head>
+<body>
+<input type="number" id="ip"><br>
+<button onclick="chia()">/2</button>
+<button onclick="nhan()">x2</button>
+
+<script>
+  function chia(){
+    let a = parseFloat(document.getElementById('ip').value);
+    alert(a/2);
+  }
+  function nhan(){
+    let a = parseFloat(document.getElementById('ip').value);
+    alert(a*2);
+  }
+</script>
+</body>
+</html>
