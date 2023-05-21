@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arr</title>
+</head>
+<body>
+<script>
+   let myArr = [1, 2, 2, 7, 8, 8, 8];
+   //loai bo cac phan tu trung lap trong mang
+   let myArr1=[];
+   for (let i=0; i<myArr.length; i++){
+       if (myArr1.indexOf(myArr[i])<0){
+           myArr1.push(myArr[i]);
+       }
+   }
+   console.log(myArr1);
+   //tao mang moi de dem
+   let myArr2=[];
+   for (let i=0; i<myArr1.length; i++){
+       myArr2[i]=[myArr1[i], 0];
+   }
+   //dem va xuat gia tri lon nhat
+   for (let i=0; i<myArr.length; i++){
+       myArr2[myArr1.indexOf(myArr[i])][1]++;
+   }
+   let ind=0, max=0;
+   for (let i=0; i<myArr2.length; i++){
+       if(myArr2[i][1]>max){
+           max = myArr2[i][1];
+           ind=i;
+       }
+   }
+   console.log(`so xuat hien nhieu nhat la ${myArr1[ind]} voi so lan la ${max}`);
+
+
+</script>
+</body>
+</html>

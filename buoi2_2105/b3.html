@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>name</title>
+</head>
+<body>
+<script>
+  let n=prompt();
+  let m=n.toUpperCase();
+  let a=n.split(' ');
+  let b=[];
+  let ind=0;
+  for( let i=0; i<n.length; i++){
+    b[i]=n[i];
+  }
+  // cho toan bo ve chu viet thuong
+  for (let i=0; i<m.length; i++){
+    if(b[i]==m[i]){
+      b[i]= m[i].toLowerCase();
+    }
+  }
+  //viet  hoa chu dau
+  for (let i=0; i<a.length; i++){
+    b[ind]=b[ind].toUpperCase();
+    ind+= (a[i].length+1);
+  }
+  //in ra
+  let newstr='';
+  for (let i=0; i<b.length; i++){
+    newstr+= b[i];
+  }
+  console.log(newstr);
+
+</script>
+</body>
+</html>

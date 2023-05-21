@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string</title>
+</head>
+<body>
+<script>
+    let myStr = "You guys try to do the exercises because doing more exercises helps us understand the theory and solve problems better";
+   //cat chuoi gan vao mang
+    let arr= myStr.split(' ');
+    console.log(` so tu trong doan tren la: ${arr.length}`);
+   //tim tu dai nhat
+    let lengthM= arr[1].length;
+    let ml='';
+    for (let i =1; i<arr.length;i++){
+        if(arr[i].length>lengthM){
+            lengthM=arr[i].length;
+            ml= arr[i];
+        }
+    }
+    console.log(`tu dai nhat la ${ml} co so ki tu bang ${lengthM}`);
+    //tim tu xuat hien nhieu nhat
+    let arr2=[];
+    let arr3=[];
+        //tao mang moi gom cac phan tu khong bi lap lai
+    for (let i=0; i<arr.length; i++){
+        if (!arr2.includes(arr[i])){
+            arr2.push(arr[i]);
+        }
+    }
+    // tao mang moi de dem so lan xuat hien cua tung phan tu
+    for (let i = 0; i<arr2.length; i++){
+        arr3[i]=[arr2[i], 0];
+    }
+    // dem so lan xuat hien cua tung phan tu trong mang
+    let count=0, max=arr3[0][1];
+    for (let i=0; i<arr.length; i++){
+        if (arr2.indexOf(arr[i])>-1){
+            arr3[arr2.indexOf(arr[i])][1]++;
+        }
+    }
+    //kiem tra so lan xuat hien
+    for (let i = 1; i<arr2.length; i++){
+        if(arr3[i][1]>max){
+            max= arr3[i][1];
+            count=1;
+        }else if(arr3[i][1]==max){
+            count++;
+        }
+    }
+    console.log(`co ${count} tu voi so lan xuat hien nhieu nhat la ${max} lan`);
+    for (let i=0; i<arr2.length; i++){
+        if(arr3[i][1]==max){
+            console.log(arr2[i]);
+        }
+    }
+
+    //dem so chu cai co so lan xuat hien nhieu nhat
+    // tao mang gom cac ki tu khong trung nhau
+    let newArr=[myStr[0]];
+    for (let i=1; i<myStr.length; i++){
+        if(!newArr.includes(myStr[i])){
+            newArr.push(myStr[i]);
+        }
+    }
+    //tao mang moi de dem
+    let newArr1=[];
+    for(let i=0; i<newArr.length; i++){
+         newArr1[i]=[newArr[i], 0];
+    }
+    // dem
+    for(let i=0; i<myStr.length; i++){
+        newArr1[newArr.indexOf(myStr[i])][1]++;
+    }
+    //check so lan nhieu nhat
+    let max1=0, count1=0;
+    for (let i=0; i< newArr.length;i++){
+        if (newArr1[i][1]>max1){
+            max1=newArr1[i][1];
+            count1=1;
+        }else if(newArr1[i][1]==max1){
+            count1++;
+        }
+    }
+    console.log(`co ${count1} chu cai co lan xuat hien nhieu nhat voi ${max1} lan`);
+
+</script>
+</body>
+</html>
